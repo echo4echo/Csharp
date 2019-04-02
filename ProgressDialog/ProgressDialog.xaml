@@ -1,0 +1,30 @@
+﻿<Window x:Class="TestUI.ErrorHandleClass.ProgressDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner" 
+        ShowInTaskbar="False" 
+        ResizeMode="NoResize" 
+        Height="150" Width="500" WindowStyle="SingleBorderWindow" Closing="OnWindowClosing" Background="#FF494949"
+        Title="{Binding Path=ProgressTitle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37" />
+            <RowDefinition Height="32" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Progress Message -->
+        <TextBlock Text="{Binding Path=ProgressMessage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" HorizontalAlignment="Center"  Margin="0,13,0,5" Foreground="LightGray"/>
+        <ProgressBar Value="{Binding Path=Progress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Maximum="{Binding Path=ProgressMax, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" HorizontalAlignment="Stretch" Margin="20,5,20,5"/>
+        <Button Name ="Cancel_ProgressBar_Button" Content="Cancel" Command="{Binding Path=Cancel}" Grid.Row="2" Width="75" HorizontalAlignment="Center" Margin="0,10,0,10" IsEnabled="{Binding Path=ProgressIsCancellable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF736E6E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
