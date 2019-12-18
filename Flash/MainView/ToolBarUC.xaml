@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="NiFlash.MainView.ToolBarUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="1024" Background="White">
+    <Grid>
+        <DockPanel>
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="15,0,0,0" Command="{Binding OpenFileCmd}">
+                <Button.ToolTip>
+                    Open the selected file
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="FolderOpenOutline" Height="25" Width="25" Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="5,0,0,0" Command="{Binding SaveFileCmd}">
+                <Button.ToolTip>
+                    Save current file
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="ContentSaveOutline" Height="25" Width="25" Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="15,0,0,0" Command="{Binding ConnectCmd}">
+                <Button.ToolTip>
+                    Connect...
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="LinkVariant" Height="25" Width="25" Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="5,0,0,0" Command="{Binding DisconnectCmd}">
+                <Button.ToolTip>
+                   Disconnect
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="LinkVariantOff" Height="25" Width="25" Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="15,0,0,0" Command="{Binding FlashProgramCmd}">
+                <Button.ToolTip>
+                    Flash firmware
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="FlashOutline" Height="25" Width="25"  Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="5,0,0,0" Command="{Binding EraseChipCmd}">
+                <Button.ToolTip>
+                    Erease full chip
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="LayersOff" Height="25" Width="25" Foreground="DarkBlue"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ToolBarBtn}" Cursor="Hand" Margin="15,0,0,0" HorizontalAlignment="Left" Foreground="DarkBlue" Command="{Binding VersionChkCmd}">
+                <Button.ToolTip>
+                    Check version information
+                </Button.ToolTip>
+                <Grid>
+                    <Rectangle Width="25" Height="25" Fill="Transparent"/>
+                    <iconPacks:PackIconMaterial Kind="BackupRestore" Height="25" Width="25"/>
+                </Grid>
+            </Button>
+
+            <!--<iconPacks:PackIconMaterial Kind="ContentSaveOutline" Height="25" Width="25"  Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />
+            <iconPacks:PackIconMaterial Kind="LinkVariant" Height="25" Width="25" Margin="30,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />
+            <iconPacks:PackIconMaterial Kind="LinkVariantOff" Height="25" Width="25"  Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />
+            <iconPacks:PackIconMaterial Kind="FlashOutline" Height="25" Width="25"  Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />
+            <iconPacks:PackIconMaterial Kind="LayersOff" Height="25" Width="25"  Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />
+            <iconPacks:PackIconMaterial Kind="BackupRestore" Height="25" Width="25"  Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand" />-->
+        </DockPanel>
+    </Grid>
+</UserControl>

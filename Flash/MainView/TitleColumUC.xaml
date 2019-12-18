@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="NiFlash.MainView.TitleColumUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="1024">
+    <Grid>
+        <DockPanel >
+
+            <Button Height="28" Style="{StaticResource MenuContextBtn}" Content="File" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="White"
+                    
+                    
+                    Click="OpenContextMenu_Click">
+                <Button.ContextMenu>
+                    <ContextMenu Loaded="ContextMenu_Loaded" Closed="ButtonContextMenu_Closed" MouseLeave="MouseLeave_ContextMenu" Focusable="False">
+                        <MenuItem Header="Open file..." Command="{Binding OpenFileCmd}"/>
+                        <MenuItem Header="Save file as..." Command="{Binding SaveFileCmd}"/>
+                        <Separator />
+                        <MenuItem Header="Close file" Command="{Binding CloseFileCmd}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+
+            <Button Style="{StaticResource MenuContextBtn}"  Content="Edit" Height="28" Margin="2,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="White" 
+                   
+                    Click="OpenContextMenu_Click">
+                <Button.ContextMenu>
+                    <ContextMenu Loaded="ContextMenu_Loaded" Closed="ButtonContextMenu_Closed" MouseLeave="MouseLeave_ContextMenu" Focusable="False">
+                        <MenuItem Header="Copy-no use" Command="{Binding CopyCmd}"/>
+                        <MenuItem Header="Paste-no use" Command="{Binding PasteCmd}"/>
+                        <Separator />
+                        <MenuItem Header="Advance" Command="{Binding OpenAdvanceCmd}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+
+            <Button Style="{StaticResource MenuContextBtn}"  Content="Target" Height="28" Margin="2,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="White" 
+                   
+                    Click="OpenContextMenu_Click">
+                <Button.ContextMenu>
+                    <ContextMenu Loaded="ContextMenu_Loaded" Closed="ButtonContextMenu_Closed" MouseLeave="MouseLeave_ContextMenu" Focusable="False">
+                        <MenuItem Header="Connect" Command="{Binding ConnectCmd}"/>
+                        <MenuItem Header="Disconnect" Command="{Binding DisconnectCmd}"/>
+                        <Separator />
+                        <MenuItem Header="Flash current program" Command="{Binding FlashProgramCmd}"/>
+                        <MenuItem Header="Check Version" Command="{Binding VersionChkCmd}"/>
+                        <Separator />
+                        <MenuItem Header="Erease full Chip" Command="{Binding EraseChipCmd}"/>
+                        <MenuItem Header="Erease sector" Command="{Binding EraseSectorCmd}"/>
+                        <Separator />
+                        <MenuItem Header="Flash bootloader no use"/>
+                        <MenuItem Header="Flash firmware" Command="{Binding FlashFirmwareCmd}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+
+            <Button Style="{StaticResource MenuContextBtn}" Content="Help" Height="28" Margin="2,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Background="White" 
+                   
+                    Click="OpenContextMenu_Click">
+                <Button.ContextMenu>
+                    <ContextMenu Loaded="ContextMenu_Loaded" Closed="ButtonContextMenu_Closed" MouseLeave="MouseLeave_ContextMenu" Focusable="False">
+                        <MenuItem Header="Help"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+
+        </DockPanel>
+       
+    </Grid>
+</UserControl>
