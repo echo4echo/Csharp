@@ -1,0 +1,2 @@
+<Slider x:Name="slider" HorizontalAlignment="Left" Margin="41,147,0,0" VerticalAlignment="Top" Width="412" 
+        extensions:SliderExtension.DragCompletedCommand="{Binding SlideCompletedCommand}"/>
